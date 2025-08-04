@@ -48,5 +48,16 @@
         console.log("RASTA website loaded successfully with new design and external CSS!");
         // This is where your JavaScript for the chatbot integration will go later.
     </script>
+    <script>
+  WebChat.init({
+    selector: "#rasa-chat-widget",
+    initPayload: "/get_started",
+    socketUrl: "https://d8c25e20cf52.ngrok-free.app", // PASTE YOUR URL HERE
+    socketPath: "/socket.io/",
+    title: "Im Rasta chatbot...",
+    subtitle: "How can I help you?",
+  });
+</script>
 </body>
 </html>
+
