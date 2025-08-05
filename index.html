@@ -18,7 +18,7 @@
     </header>
     <div class="yellow-bar"></div>
     <main class="main-content">
-        <div id="rasa-chat-widget" class="chatbot-placeholder">
+        <div id="rasta-chatbot-container" class="chatbot-placeholder">
             <p class="font-semibold mb-2">RASTA Chatbot will appear here soon!</p>
             <p class="text-sm text-blue-600">This area is optimized for clear text display. We're building intelligence, one step at a time.</p>
         </div>
@@ -27,8 +27,23 @@
     <footer class="footer">
         <p>Developed by Warren, Radleys 2025 copyright</p>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
-
-    </body>
+    <script>
+        (function () {
+            if (typeof WebChat !== 'undefined' && typeof WebChat.init === 'function') {
+                WebChat.init({
+                    selector: "#rasta-chatbot-container",
+                    initPayload: "/get_started",
+                    socketUrl: "https://f2cd7a7bc8a3.ngrok-free.app",
+                    socketPath: "/socket.io/",
+                    title: "I'm Rasta chatbot...",
+                    subtitle: "How can I help you?",
+                });
+                console.log("Rasa WebChat initialization successful!");
+            } else {
+                console.log('Rasa WebChat could not be initialized. The WebChat object is not available.');
+            }
+        })();
+    </script>
+</body>
 </html>
