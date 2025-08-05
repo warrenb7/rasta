@@ -30,22 +30,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
 
-    <script>
-        (function () {
-            if (typeof WebChat !== 'undefined' && typeof WebChat.init === 'function') {
-                WebChat.init({
-                    selector: "#rasa-chat-widget",
-                    initPayload: "/get_started",
-                    socketUrl: "https://f2cd7a7bc8a3.ngrok-free.app",
-                    socketPath: "/socket.io/",
-                    title: "I'm Rasta chatbot...",
-                    subtitle: "How can I help you?",
-                });
-                console.log("Rasa WebChat initialization successful!");
-            } else {
-                console.log('Rasa WebChat could not be initialized. The WebChat object is not available.');
-            }
-        })();
-    </script>
-</body>
+    </body>
 </html>
