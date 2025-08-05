@@ -5,19 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RASTA - Radley AI Support and Technical Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.min.css" />
-
 </head>
 <body>
     <header class="header">
-        <img src="Images/logo.png" alt="Company Logo" class="header-logo rounded-md">
         <div class="header-title-container">
             <h1 class="header-title">R.A.S.T.A - Radley's AI Support and Technical Assistant</h1>
         </div>
-        <div class="header-logo w-12 h-12 opacity-0 hidden sm:block"></div>
     </header>
     <div class="yellow-bar"></div>
     <main class="main-content">
@@ -38,13 +34,13 @@
             WebChat.default({
                 selector: "#rasta-chatbot-container",
                 initPayload: "/get_started",
-                socketUrl: "https://f6018aa2668f.ngrok-free.app",
+                socketUrl: "https://e6e7e9cc361c.ngrok-free.app",
                 title: "I'm Rasta chatbot...",
                 subtitle: "How can I help you?",
+                withCredentials: false,
             });
             console.log("Rasa WebChat successfully initialized!");
         });
     </script>
 </body>
 </html>
-
