@@ -28,8 +28,9 @@
         <p>Developed by Warren, Radleys 2025 copyright</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
-    <script>
-        window.addEventListener('load', function () {
+   <script>
+        // Use an IIFE (Immediately Invoked Function Expression) for reliability
+        (function () {
             if (typeof WebChat !== 'undefined' && typeof WebChat.init === 'function') {
                 WebChat.init({
                     selector: "#rasa-chat-widget",
@@ -39,11 +40,15 @@
                     title: "I'm Rasta chatbot...",
                     subtitle: "How can I help you?",
                 });
+                console.log("Rasa WebChat initialization attempt successful.");
             } else {
-                console.log('Rasa WebChat is not initialized yet!');
+                console.log('Rasa WebChat could not be initialized. The WebChat object is not available.');
             }
-        });
+        })();
     </script>
 </body>
 </html>
+</body>
+</html>
+
 
