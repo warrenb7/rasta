@@ -7,6 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.min.css" />
+
 </head>
 <body>
     <header class="header">
@@ -28,24 +31,19 @@
         <p>Developed by Warren, Radleys 2025 copyright</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.min.js"></script>
+
     <script>
-        (function () {
-            if (typeof WebChat !== 'undefined' && typeof WebChat.init === 'function') {
-                WebChat.init({
-                    selector: "#rasta-chatbot-container",
-                    initPayload: "/get_started",
-                    socketUrl: "https://f2cd7a7bc8a3.ngrok-free.app",
-                    socketPath: "/socket.io/",
-                    title: "I'm Rasta chatbot...",
-                    subtitle: "How can I help you?",
-                });
-                console.log("Rasa WebChat initialization successful!");
-            } else {
-                console.log('Rasa WebChat could not be initialized. The WebChat object is not available.');
-            }
-        })();
+        window.addEventListener("load", function () {
+            WebChat.default({
+                selector: "#rasta-chatbot-container",
+                initPayload: "/get_started",
+                socketUrl: "https://0285be34a157.ngrok-free.app",
+                title: "I'm Rasta chatbot...",
+                subtitle: "How can I help you?",
+            });
+            console.log("Rasa WebChat successfully initialized!");
+        });
     </script>
 </body>
 </html>
